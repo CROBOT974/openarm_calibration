@@ -122,9 +122,3 @@ Check that `tr_marker` is aligned with the robot end-effector in RViz.
 | `aruco_pose_node.py` | Detects ArUco marker via Hikrobot USB3 camera, publishes `tr_base → tr_marker` TF |
 | `auto_sample.py` | Moves the right arm through predefined poses for calibration sampling |
 | `publish_calib.py` | Reads `.calib` result and publishes `world → tr_base` as a static TF |
-
-## License
-
-[Apache License 2.0](LICENSE)
-
-Copyright 2025 Enactic, Inc.
