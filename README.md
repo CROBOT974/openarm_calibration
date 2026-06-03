@@ -1,13 +1,21 @@
 # OpenArm Calibration
 
-Hand-eye calibration package for OpenArm using the easy_handeye2 library (eye-on-base mode).
+Hand-to-eye calibration package for OpenArm using the easy_handeye2 library (eye-on-base mode).
 
-## Prerequisites (one-time)
+## Prerequisites
 
 ```bash
+# CLone the openarm ros2 packages
+mkdir -p openarm/ros2_ws/src
+cd ~/openarm/ros2_ws/src
+git clone https://github.com/enactic/openarm_ros2.git
+
 # Clone easy_handeye2
-cd ~/openarm/ros2_ws/src/openarm_ros2
-vcs import < openarm.repos
+cd ./openarm_ros2
+git clone https://github.com/marcoesposito1988/easy_handeye2.git
+
+# Clone the project
+git clone https://github.com/marcoesposito1988/easy_handeye2.git
 
 # Build
 cd ~/openarm/ros2_ws
