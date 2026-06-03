@@ -4,6 +4,8 @@ Hand-to-eye calibration package for OpenArm using the easy_handeye2 library (eye
 
 ## Prerequisites
 
+THis project rely on the ROS2 package for openarm and easy_handeye2. Thus, ensuring that you have those packages:
+
 ```bash
 # CLone the openarm ros2 packages
 mkdir -p openarm/ros2_ws/src
@@ -15,7 +17,7 @@ cd ./openarm_ros2
 git clone https://github.com/marcoesposito1988/easy_handeye2.git
 
 # Clone the project
-git clone https://github.com/marcoesposito1988/easy_handeye2.git
+git clone https://github.com/CROBOT974/openarm_calibration.git
 
 # Build
 cd ~/openarm/ros2_ws
@@ -32,9 +34,11 @@ source /opt/ros/humble/setup.bash
 source ~/openarm/ros2_ws/install/setup.bash
 ```
 
-## 1. Camera Intrinsic Calibration (one-time)
+## 1. Camera Intrinsic Calibration
 
-Place a chessboard in front of the camera and show it from multiple angles.
+Set the intrinsic parameters of your camera is essential. You can develope your calibration algorithm or simply use the ./scripts/camera_calib.py. 
+
+During the Calibration process, place a Opencv chessboard in front of the camera and show it from multiple angles.
 
 ```bash
 cd ~/openarm/ros2_ws/src/openarm_ros2/openarm_calibration/scripts
@@ -45,9 +49,12 @@ python3 camera_calib.py   # images saved under Camera/test2
 - Press `s` to compute and display calibration results.
 - Copy the output `fx`, `fy`, `cx`, `cy` values into the `DEFAULT_CAMERA_MATRIX` constant in `aruco_pose_node.py`.
 
+After obtaining the paramteres, remember to replace the DEFAULT_CAMERA_MATRIX in aruco_pose_node.py with your values.
+
+
 ## 2. Hand-Eye Calibration
 
-### Terminal 1 — Launch robot, camera, and easy_handeye2
+### Terminal 1 — Launch the robot and easy_handeye2
 
 ```bash
 ros2 launch openarm_calibration calibrate.launch.py
@@ -70,7 +77,7 @@ ros2 run openarm_calibration aruco_pose_node.py \
   --marker-frame tr_marker
 ```
 
-After collecting **15-20 samples**, click **Compute Calibration** in the rqt panel.
+After collecting **15 samples**, click **Compute Calibration** in the rqt panel.
 
 The result is saved to `~/.ros2/easy_handeye2/calibrations/openarm_right_eob.calib`.
 
@@ -80,7 +87,7 @@ The result is saved to `~/.ros2/easy_handeye2/calibrations/openarm_right_eob.cal
 
 ```bash
 ros2 launch openarm_bringup openarm.bimanual.launch.py \
-  arm_type:=v10 use_fake_hardware:=true
+  arm_type:=v10 use_fake_hardware:=false
 ```
 
 ### Terminal 2 — ArUco marker detection
@@ -107,32 +114,6 @@ ros2 action send_goal /right_joint_trajectory_controller/follow_joint_trajectory
 ```
 
 Check that `tr_marker` is aligned with the robot end-effector in RViz.
-
-## 4. Daily Usage (calibration result already on robot)
-
-```bash
-# Launch robot + publish calibration TF
-ros2 launch openarm_bringup openarm.bimanual.launch.py \
-  arm_type:=v10 use_fake_hardware:=false
-
-ros2 run openarm_calibration publish_calib.py --name openarm_right_eob
-```
-
-## TF Frame Graph
-
-During calibration:
-
-```
-world ──→ openarm_right_hand   (robot kinematics)
- tr_base ──→ tr_marker          (ArUco detection)
-```
-
-After publishing calibration result:
-
-```
-world ──→ tr_base               (calibration static TF)
- tr_base ──→ tr_marker           (ArUco detection)
-```
 
 ## Nodes
 
