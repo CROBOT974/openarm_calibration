@@ -4,7 +4,8 @@ Hand-to-eye calibration package for OpenArm using the easy_handeye2 library (eye
 
 ## Hardware
 * Robot: Openarm 2.0
-* Camera: HIKROBOT MV-CH100-60UC + MVL-KF0618M-12MPE 
+* Camera: HIKROBOT MV-CH100-60UC + MVL-KF0618M-12MPE
+* Tag: 50x50 mm Aruco Tag
 
 ## Prerequisites
 
