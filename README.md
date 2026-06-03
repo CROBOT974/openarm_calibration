@@ -122,3 +122,16 @@ Check that `tr_marker` is aligned with the robot end-effector in RViz.
 | `aruco_pose_node.py` | Detects ArUco marker via Hikrobot USB3 camera, publishes `tr_base → tr_marker` TF |
 | `auto_sample.py` | Moves the right arm through predefined poses for calibration sampling |
 | `publish_calib.py` | Reads `.calib` result and publishes `world → tr_base` as a static TF |
+
+## Citation
+
+If you use this code in your research, please cite:
+
+```bibtex
+@software{Openarm_Calibration,
+  author = {Chi, Cheng},
+  title = {Hand-to-eye calibration package for OpenArm using the easy_handeye2 library},
+  url = {[https://github.com/CROBOT974/WaterLily-RL](https://github.com/CROBOT974/openarm_calibration.git)},
+  version = {1.0.0},
+  year = {2026}
+}
