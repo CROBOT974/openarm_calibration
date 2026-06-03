@@ -1,7 +1,7 @@
 # OpenArm Calibration
 
 Hand-to-eye calibration package for OpenArm using the easy_handeye2 library (eye-on-base mode).
-<img width="785" height="549" alt="截图 2026-06-03 16-15-51" src="https://github.com/user-attachments/assets/25f7e998-fe06-408f-98bf-cd2ea827b320" />
+![OpenArm Calibration](img/cl.png)
 
 
 ## Hardware
