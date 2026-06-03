@@ -2,6 +2,10 @@
 
 Hand-to-eye calibration package for OpenArm using the easy_handeye2 library (eye-on-base mode).
 
+## Hardware
+* Robot: Openarm 2.0
+* Camera: HIKROBOT MV-CH100-60UC + MVL-KF0618M-12MPE 
+
 ## Prerequisites
 
 THis project rely on the ROS2 package for openarm and easy_handeye2. Thus, ensuring that you have those packages:
@@ -38,7 +42,7 @@ source ~/openarm/ros2_ws/install/setup.bash
 
 Set the intrinsic parameters of your camera is essential. You can develope your calibration algorithm or simply use the ./scripts/camera_calib.py. 
 
-During the Calibration process, place a Opencv chessboard in front of the camera and show it from multiple angles.
+During the Calibration process, place a Opencv chessboard(https://docs.opencv.org/4.x/pattern.png) in front of the camera and show it from multiple angles.
 
 ```bash
 cd ~/openarm/ros2_ws/src/openarm_ros2/openarm_calibration/scripts
@@ -129,7 +133,7 @@ If you use this code in your research, please cite:
 
 ```bibtex
 @software{Openarm_Calibration,
-  author = {Chi, Cheng},
+  author = {Chi, Cheng and LiKang, Song},
   title = {Hand-to-eye calibration package for OpenArm using the easy_handeye2 library},
   url = {https://github.com/CROBOT974/openarm_calibration.git},
   version = {1.0.0},
