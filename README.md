@@ -92,7 +92,7 @@ The result is saved to `~/.ros2/easy_handeye2/calibrations/openarm_right_eob.cal
 
 ## 3. Verify Calibration Result
 
-### Terminal 1 — Simulated robot (no physical robot needed)
+### Terminal 1 — Simulated robot (with physical robot)
 
 ```bash
 ros2 launch openarm_bringup openarm.bimanual.launch.py \
