@@ -5,7 +5,7 @@ Hand-to-eye (eye-on-base) calibration package for OpenArm using the easy_handeye
 
 
 ## Hardware
-* Robot: Openarm 2.0
+* Robot: Openarm 1.0
 * Camera: HIKROBOT MV-CH100-60UC + MVL-KF0618M-12MPE
 * Tag: 50x50 mm Aruco Tag
 
