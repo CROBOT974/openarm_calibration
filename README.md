@@ -136,7 +136,7 @@ If you use this code in your research, please cite:
 
 ```bibtex
 @software{Openarm_Calibration,
-  author = {Chi, Cheng and LiKang, Song},
+  author = {Chi, Cheng and LiKang, Song and Jiaxi Zheng},
   title = {Hand-to-eye calibration package for OpenArm using the easy_handeye2 library},
   url = {https://github.com/CROBOT974/openarm_calibration.git},
   version = {1.0.0},
