@@ -32,7 +32,7 @@ source /opt/ros/humble/setup.bash
 colcon build --symlink-install
 ```
 
-We supposed that you complete the "setup" process(https://docs.openarm.dev/1.0/software/setup/) of the openarm_ros2 package before you start this project.
+We supposed that you completed the "setup" process(https://docs.openarm.dev/1.0/software/setup/) of the openarm_ros2 package before you start this project.
 
 ## Per-terminal Setup
 
