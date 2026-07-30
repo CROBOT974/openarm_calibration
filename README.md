@@ -132,6 +132,10 @@ Check that `tr_marker` is aligned with the robot end-effector in RViz.
 | `auto_sample.py` | Moves the right arm through predefined poses for calibration sampling |
 | `publish_calib.py` | Reads `.calib` result and publishes `world → tr_base` as a static TF |
 
+## Result
+
+<video src="img/test.webm" controls width="800"></video>
+
 ## Citation
 
 If you use this code in your research, please cite:
