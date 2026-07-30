@@ -134,7 +134,8 @@ Check that `tr_marker` is aligned with the robot end-effector in RViz.
 
 ## Result
 
-![Calibration Result](img/test.gif)
+https://github.com/user-attachments/assets/dbe23aab-5cfa-4bee-9f08-91562eb0b79a
+
 
 ## Citation
 
