@@ -134,7 +134,7 @@ Check that `tr_marker` is aligned with the robot end-effector in RViz.
 
 ## Result
 
-<video src="img/test.webm" controls width="800"></video>
+![Calibration Result](img/test.gif)
 
 ## Citation
 
